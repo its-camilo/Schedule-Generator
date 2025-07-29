@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Horarios Universitarios</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect x='6' y='10' width='36' height='32' rx='4' fill='%234b8cff'/%3E%3Crect x='6' y='18' width='36' height='24' rx='2' fill='%23fff'/%3E%3Crect x='12' y='24' width='8' height='8' rx='2' fill='%234b8cff'/%3E%3Crect x='28' y='24' width='8' height='8' rx='2' fill='%234b8cff'/%3E%3Crect x='12' y='34' width='8' height='4' rx='2' fill='%234b8cff'/%3E%3Crect x='28' y='34' width='8' height='4' rx='2' fill='%234b8cff'/%3E%3Crect x='14' y='6' width='4' height='8' rx='2' fill='%234b8cff'/%3E%3Crect x='30' y='6' width='4' height='8' rx='2' fill='%234b8cff'/%3E%3C/svg%3E"/>
+</head>
+<body>
+    <header>
+        <h1>Generador de Horarios Universitarios</h1>
+        <div class="header-buttons">
+            <button id="toggle-theme">🌙/☀️</button>
+            <button id="load-sample">Cargar datos de prueba</button>
+            <button id="clear-data">Eliminar todos los datos</button>
+        </div>
+    </header>
+    <nav class="tab-nav">
+        <button class="tab-btn active" data-tab="materias">Materias</button>
+        <button class="tab-btn" data-tab="prioridad">Prioridad</button>
+        <button class="tab-btn" data-tab="generador">Generador de horarios</button>
+    </nav>
+    <main>
+        <section id="tab-materias" class="tab-content active">
+            <div class="materias-header">
+                <button id="add-materia">Agregar materia</button>
+            </div>
+            <ul id="materias-list"></ul>
+        </section>
+        <section id="tab-prioridad" class="tab-content">
+            <h2>Prioridad de Materias</h2>
+            <ul id="prioridad-materias" class="sortable-list"></ul>
+            <h2>Prioridad de Profesores</h2>
+            <ul id="prioridad-profesores" class="sortable-list"></ul>
+        </section>
+        <section id="tab-generador" class="tab-content">
+            <div class="generator-options">
+                <button id="generate-normal">Generar horario normal</button>
+                <button id="generate-lunch">Generar horario con almuerzo libre</button>
+            </div>
+            <div class="schedules">
+                <div class="schedule-table">
+                    <h3>Horario Normal (Mejor)</h3>
+                    <table id="schedule1"></table>
+                    <div id="details1" class="schedule-details"></div>
+                    <h3>Horario Normal (2° Mejor)</h3>
+                    <table id="schedule2"></table>
+                    <div id="details2" class="schedule-details"></div>
+                </div>
+                <div class="schedule-table">
+                    <h3>Almuerzo Libre (Mejor)</h3>
+                    <table id="schedule3"></table>
+                    <div id="details3" class="schedule-details"></div>
+                    <h3>Almuerzo Libre (2° Mejor)</h3>
+                    <table id="schedule4"></table>
+                    <div id="details4" class="schedule-details"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <span id="close-modal" class="close">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

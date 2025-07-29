@@ -1,0 +1,306 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #181a20;
+    color: #e0e0e0;
+    transition: background 0.3s, color 0.3s;
+}
+body.light {
+    background: #f5f6fa;
+    color: #222;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #23263a;
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+body.light header {
+    background: #fff;
+    color: #23263a;
+}
+.header-buttons button {
+    margin-left: 1rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    background: #353a50;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.2s;
+}
+body.light .header-buttons button {
+    background: #e0e0e0;
+    color: #23263a;
+}
+.header-buttons button:hover {
+    background: #4b5170;
+}
+.tab-nav {
+    display: flex;
+    background: #23263a;
+    padding: 0.5rem 2rem;
+    gap: 1rem;
+}
+body.light .tab-nav {
+    background: #fff;
+}
+.tab-btn {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 1rem;
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s;
+}
+.tab-btn.active {
+    border-bottom: 2px solid #4b8cff;
+    color: #4b8cff;
+}
+main {
+    padding: 2rem;
+    max-width: 900px;
+    margin: auto;
+}
+.tab-content {
+    display: none;
+}
+.tab-content.active {
+    display: block;
+}
+.materias-header {
+    margin-bottom: 1rem;
+}
+#add-materia {
+    background: #4b8cff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem 1.2rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+#add-materia:hover {
+    background: #3570c7;
+}
+#materias-list {
+    list-style: none;
+    padding: 0;
+}
+.materia-item {
+    background: #23263a;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+body.light .materia-item {
+    background: #fff;
+}
+.materia-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.materia-actions button,
+.grupo-actions button {
+    margin-left: 0.5rem;
+    background: #4b8cff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.95rem;
+    cursor: pointer;
+}
+.materia-actions button:hover,
+.grupo-actions button:hover {
+    background: #3570c7;
+}
+.grupos-list {
+    list-style: none;
+    padding: 0.5rem 0 0 1rem;
+}
+.grupo-item {
+    background: #353a50;
+    margin-bottom: 0.5rem;
+    border-radius: 6px;
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+body.light .grupo-item {
+    background: #e0e0e0;
+}
+.sortable-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+.sortable-list li {
+    background: #23263a;
+    margin-bottom: 0.5rem;
+    border-radius: 6px;
+    padding: 0.7rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: grab;
+    transition: box-shadow 0.2s, background 0.2s;
+}
+.sortable-list li.dragging {
+    opacity: 0.5;
+    box-shadow: 0 0 8px #4b8cff;
+}
+.sortable-list li.drag-over {
+    background: #353a50;
+    box-shadow: 0 0 8px #4b8cff;
+}
+
+body.light .sortable-list li {
+    background: #fff;
+}
+.sortable-list .priority-actions button {
+    background: #4b8cff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.2rem 0.7rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+.sortable-list .priority-actions button:hover {
+    background: #3570c7;
+}
+.generator-options {
+    margin-bottom: 1.5rem;
+    display: flex;
+    gap: 1rem;
+}
+.generator-options button {
+    background: #4b8cff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem 1.2rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.generator-options button:hover {
+    background: #3570c7;
+}
+.schedules {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+.schedule-table {
+    flex: 1 1 350px;
+    background: #23263a;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+body.light .schedule-table {
+    background: #fff;
+}
+.schedule-table h3 {
+    margin-top: 0;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+}
+thead th, tbody td {
+    border: 1px solid #353a50;
+    padding: 0.5rem;
+    text-align: center;
+}
+body.light thead th, body.light tbody td {
+    border: 1px solid #e0e0e0;
+}
+.schedule-details {
+    font-size: 0.95rem;
+    color: #b0b0b0;
+}
+.modal {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+.modal.hidden {
+    display: none;
+}
+.modal-content {
+    background: #23263a;
+    color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    min-width: 320px;
+    max-width: 90vw;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+    position: relative;
+}
+body.light .modal-content {
+    background: #fff;
+    color: #23263a;
+}
+.close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #4b8cff;
+}
+.close:hover {
+    color: #3570c7;
+}
+input, select {
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #353a50;
+    background: #181a20;
+    color: #e0e0e0;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+body.light input, body.light select {
+    background: #fff;
+    color: #23263a;
+    border: 1px solid #e0e0e0;
+}
+form label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+}
+form {
+    margin-bottom: 0;
+}
+@media (max-width: 700px) {
+    main {
+        padding: 1rem;
+    }
+    .schedules {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .schedule-table {
+        padding: 0.5rem;
+    }
+}
