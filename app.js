@@ -368,11 +368,11 @@ const FRANJAS = ['7–9','9–11','11–1','2–4','4–6','6–8'];
 function renderScheduleTable(tableId, schedule) {
     const table = document.getElementById(tableId);
     let html = '<thead><tr><th></th>';
-    FRANJAS.forEach(f => html += `<th>${f}</th>`);
+    DIAS.forEach(d => html += `<th>${d}</th>`);
     html += '</tr></thead><tbody>';
-    DIAS.forEach(d => {
-        html += `<tr><th>${d}</th>`;
-        FRANJAS.forEach(f => {
+    FRANJAS.forEach(f => {
+        html += `<tr><th>${f}</th>`;
+        DIAS.forEach(d => {
             const cell = schedule.find(s => s.dia===d && s.franja===f);
             html += `<td>${cell ? cell.materia+'<br>'+cell.profesor+'<br>Grupo '+cell.grupo : ''}</td>`;
         });
