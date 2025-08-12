@@ -169,6 +169,7 @@ window.addGrupo = function(idx) {
         <select name='dias'>
             <option>Lunes/Miércoles</option>
             <option>Martes/Jueves</option>
+            <option>Miércoles/Viernes</option>
             <option>Viernes</option>
             <option>Sábado</option>
         </select>
@@ -211,6 +212,7 @@ window.editGrupo = function(matIdx, grpIdx) {
         <select name='dias'>
             <option${g.dias==='Lunes/Miércoles'?' selected':''}>Lunes/Miércoles</option>
             <option${g.dias==='Martes/Jueves'?' selected':''}>Martes/Jueves</option>
+            <option${g.dias==='Miércoles/Viernes'?' selected':''}>Miércoles/Viernes</option>
             <option${g.dias==='Viernes'?' selected':''}>Viernes</option>
             <option${g.dias==='Sábado'?' selected':''}>Sábado</option>
         </select>
